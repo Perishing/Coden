@@ -1,0 +1,56 @@
+<html>
+
+    <head>
+    
+        <title>Javascript</title>
+    
+    
+    </head>
+    
+    <body>
+        
+        <p>Wie viele Finger halte ich hoch?</p>
+        <p><input type="text" id="Finger"</p>
+        <p><button id="Anzahlabfrage">Raten</button></p>
+            
+        <script type="text/javascript">
+  
+            var min = 0;
+            var max = 5;
+            var x = Math.floor(Math.random() * (max - min + 1)) + min;
+        
+
+            document.getElementById("Anzahlabfrage").onclick = function () {
+                
+            var Fingeranzahl = document.getElementById("Finger").value;
+            var Finger = x;
+  
+                if (Fingeranzahl == Finger) {
+                    
+                alert("Du liegst richtig!");
+  
+                    min = 0;
+                    max = 5;
+                    x = Math.floor(Math.random() * (max - min + 1)) + min;
+                
+                } else {
+                    
+                    alert("Nein, versuchs nochmal");
+                    
+                    
+                }
+                
+                
+            }
+                
+
+   
+
+        </script>
+        
+    
+    
+    </body>
+    
+    
+</html>

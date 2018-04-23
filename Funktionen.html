@@ -1,0 +1,86 @@
+<html>
+
+    <head>
+    
+        <title>Javascript</title>
+    
+    
+    </head>
+    
+    <body>
+        
+        <p>Wie viele Finger hältst du hoch?</p>
+        
+        <p>
+        
+            <select id="meineZahl">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            
+            
+            </select>
+        
+        
+        </p>
+        
+        <button id="versuche">Rate</button>
+
+        <script type="text/javascript">
+            
+            function raten(richtigeAntwort) {
+                
+                    var schätzung = Math.random();
+                    schätzung = schätzung * 6;
+                    schätzung = Math.floor(schätzung);
+                    
+                    if(schätzung == richtigeAntwort) {
+                    
+                        return (true);
+                    
+                    }else {
+                    
+                        return (false);
+                    
+                } 
+                
+                
+            }
+            
+            document.getElementById("versuche").onclick = function () {
+                
+                var meineZahl = document.getElementById("meineZahl").value;
+                
+                var erraten = false;
+                
+                var anzahlderversuche = 1;
+                
+                while(erraten == false) {
+                    
+                    if(raten(meineZahl) == true) {
+                    
+                        erraten = true;
+                    
+                        alert("Ich habs. Deine Zahl ist " + meineZahl + " ich habe " + anzahlderversuche + " Versuche gebraucht!");
+                    
+                    }else {
+                    
+                    anzahlderversuche++;
+                    
+                }
+                    
+                }
+
+            }
+
+        </script>
+        
+    
+    
+    </body>
+    
+    
+</html>
